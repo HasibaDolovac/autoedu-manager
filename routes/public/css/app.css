@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-    /* Nove, moderne boje i gradijenti */
+    
     --primarna-gradijent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --dugme-hover: linear-gradient(135deg, #5a6fd6 0%, #694291 100%);
     --akcent-plava: #3498db;
@@ -24,13 +24,13 @@ body, html {
     background-size: cover;
 }
 
-/* Struktura aplikacije */
+
 .glavna-struktura {
     display: flex;
     height: 100vh;
 }
 
-/* SIDEBAR */
+
 .bočni-meni {
     width: 260px;
     background: rgba(15, 15, 15, 0.9);
@@ -59,7 +59,7 @@ body, html {
     transform: translateX(5px);
 }
 
-/* GLAVNI SADRŽAJ */
+
 .glavni-deo {
     flex: 1;
     overflow-y: auto;
@@ -78,7 +78,7 @@ body, html {
 
 .ime-korisnika { color: white; font-weight: bold; margin-right: 15px; }
 
-/* KARTICE - Čist kontrast */
+
 .staklena-kartica {
     background: var(--bela-kartica);
     backdrop-filter: blur(15px);
@@ -96,7 +96,7 @@ body, html {
     color: var(--tamni-tekst) !important;
 }
 
-/* INPUT POLJA */
+
 input, select, textarea {
     width: 100%;
     padding: 14px;
@@ -114,7 +114,7 @@ input:focus, select:focus {
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
-/* MODERNA DUGMAD */
+
 .dugme-primarno, .dugme-registracija-nav {
     background: var(--primarna-gradijent) !important;
     color: white !important;
@@ -138,7 +138,7 @@ input:focus, select:focus {
     filter: brightness(1.1);
 }
 
-/* LOGOUT DUGMAD */
+
 .dugme-logout-sidebar, .dugme-odjava-nav {
     background: rgba(231, 76, 60, 0.1) !important;
     color: #e74c3c !important;
@@ -157,7 +157,7 @@ input:focus, select:focus {
     box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
 }
 
-/* TERMINI I KARTICE */
+
 .termin-kartica {
     background: white;
     border-radius: 15px;

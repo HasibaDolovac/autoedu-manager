@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PocetnaController extends Controller
 {
-    /**
-     * Glavni Dashboard / Welcome strana
-     */
+   
     public function index()
     {
         $obavestenja = Announcement::latest()->get();

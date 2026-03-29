@@ -65,7 +65,7 @@ class UserController extends Controller
     {
         $kandidat = User::findOrFail($id);
         
-        // Ako je 1 postavi na 0, inače na 1
+      
         $noviStatus = ($kandidat->teorija_status == 1) ? 0 : 1;
         
         $kandidat->update(['teorija_status' => $noviStatus]);

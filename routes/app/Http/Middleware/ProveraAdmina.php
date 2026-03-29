@@ -15,7 +15,7 @@ class ProveraAdmina
      */
    public function handle(Request $request, Closure $next)
 {
-    // Ako korisnik NIJE admin, šalji ga na početnu sa porukom
+   
     if (auth()->user()->role !== 'admin') {
         return redirect('/')->with('error', 'Nemate dozvolu za ovu akciju!');
     }

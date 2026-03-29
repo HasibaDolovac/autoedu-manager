@@ -41,7 +41,7 @@
                 </div>
             @endif
 
-            {{-- pracenje progresa kod kandidata sa obavlenim casovima --}}
+            {{-- pracenje progresa kod kandidata sa obavljenim casovima --}}
 @if(Auth::user()->role == 'kandidat' && Auth::user()->instruktor_ime && !str_contains(Auth::user()->instruktor_ime, '(ČEKA)'))
     <div style="background: rgba(46, 204, 113, 0.1); padding: 25px; border-radius: 20px; border: 1px solid rgba(46, 204, 113, 0.3); margin-bottom: 30px; text-align: center;">
         <h3 style="margin-bottom: 15px; color: #2ecc71;">Tvoj napredak obuke</h3>
@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
 
-                                {{-- Prikaz komentara --}}
+                                {{-- prikaz komentara --}}
                                 @if($termin->komentar_instruktora)
                                     <div style="margin-top: 12px; padding: 12px; background: rgba(52, 152, 219, 0.1); border-left: 4px solid #3498db; border-radius: 4px; font-style: italic; font-size: 0.95em; color: #ecf0f1;">
                                         <span style="display: block; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; color: #3498db; margin-bottom: 5px; font-style: normal; font-weight: bold;">💡 Savet instruktora:</span>
@@ -116,10 +116,9 @@
     </thead>
     <tbody>
     @if(Auth::user()->role == 'instruktor' || Auth::user()->role == 'admin')
-        {{-- I instruktor i admin vide listu svih kandidata --}}
+       
         @php 
-            // Ako je admin, izvlačimo sve kandidate iz baze
-            // Ako je instruktor, izvlačimo samo one koji su njegovi
+           
             $prikazKandidata = (Auth::user()->role == 'admin') 
                 ? \App\Models\User::where('role', 'kandidat')->get() 
                 : \App\Models\User::where('instruktor_ime', Auth::user()->name)->get(); 
@@ -182,7 +181,7 @@
         @endphp
 
         @forelse($zahtevi as $z)
-            {{-- Kartica kandidata kod instr --}}
+            
             <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);">
                 
                 
@@ -222,7 +221,7 @@
         <form action="{{ route('instruktor.zakazi-cas') }}" method="POST">
             @csrf
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
-                {{-- Izmeni listu kandidata u formi za zakazivanje --}}
+               
                     <select name="user_id" required style="padding: 10px; width: 100%; color: black;">
     <option value="">-- Izaberi kandidata (samo položena teorija) --</option>
     

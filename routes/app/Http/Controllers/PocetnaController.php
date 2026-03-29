@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PocetnaController extends Controller
 {
-    /**
-     * Glavni Dashboard / Welcome strana
-     */
+    
     public function index()
     {
         $obavestenja = Announcement::latest()->get();
@@ -35,12 +33,11 @@ class PocetnaController extends Controller
             $statistika['termini'] = Appointment::count();
         } 
         elseif ($user->role == 'instruktor') {
-            // Uzimamo kandidate kojima je ovaj korisnik dodeljen kao instruktor
+           
             $mojiKandidati = User::where('instruktor_ime', $user->name)->get();
         } 
         elseif ($user->role == 'kandidat') {
-            // Uzimamo SVE termine kandidata (poređane od najnovijeg ka najstarijem)
-            // kako bi mogao da vidi savete instruktora sa završenih časova
+            
             $mojiTermini = Appointment::where('user_id', $user->id)
                 ->orderBy('datum_vreme', 'desc')
                 ->get();
@@ -52,9 +49,7 @@ class PocetnaController extends Controller
         ));
     }
 
-    /**
-     * Lista termina za instruktora (ako ikada napraviš termini.blade.php)
-     */
+   
     public function mojiTermini()
     {
         $termini = Appointment::with('user')
@@ -65,22 +60,20 @@ class PocetnaController extends Controller
         return view('instruktor.termini', compact('termini'));
     }
 
-    /**
-     * Prikaz stranice za evidenciju vožnji
-     */
+    
     public function evidencijaVoznji()
     {
-        // Izvlačimo kandidate za ulogovanog instruktora
+       
         $mojiKandidati = User::where('instruktor_ime', Auth::user()->name)
-                     ->whereNotNull('name') // Ovo će sakriti "duhove" u tabeli
+                     ->whereNotNull('name') 
                      ->get();
-        // Ovo gađa tvoj fajl resources/views/evidencija.blade.php
+        
         return view('instruktor.evidencija', compact('mojiKandidati'));
     }
 
     public function obrisiRecenziju($id)
 {
-    // Provera da li je korisnik admin
+   
     if (auth()->user()->role !== 'admin') {
         return back()->with('error', 'Nemate ovlašćenje za ovu akciju.');
     }

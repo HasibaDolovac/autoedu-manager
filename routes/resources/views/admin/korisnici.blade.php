@@ -36,10 +36,10 @@
                         </span>
                     </td>
                     <td style="padding: 15px;">
-                        {{-- Flexbox kontejner koji sprečava preklapanje --}}
+                        
                         <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
                             
-                            {{-- Dugme Uredi --}}
+                            
                             <a href="{{ route('admin.korisnici.edit', $k->id) }}" 
                                style="text-decoration: none; border: 1px solid #3498db; color: #3498db; padding: 6px 14px; border-radius: 6px; font-size: 0.85em; font-weight: bold; transition: 0.3s; white-space: nowrap;"
                                onmouseover="this.style.background='#3498db'; this.style.color='white'" 
@@ -47,7 +47,7 @@
                                 Uredi
                             </a>
 
-                            {{-- Dugme Obriši (unutar svoje forme, ispravno pozicionirano) --}}
+                            
                             <form action="{{ route('admin.korisnici.destroy', $k->id) }}" method="POST" onsubmit="return confirm('Da li ste sigurni?')" style="margin: 0;">
                                 @csrf
                                 @method('DELETE') 

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
     $table->id();
-    $table->foreignId('user_id'); // ID instruktora kojeg ocenjujemo
-    $table->string('autor');      // Ime onoga ko piše
+    $table->foreignId('user_id'); 
+    $table->string('autor');     
     $table->integer('ocena');
     $table->text('komentar');
     $table->timestamps();

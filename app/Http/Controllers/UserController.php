@@ -44,7 +44,7 @@ class UserController extends Controller
     public function posaljiZahtev(Request $request) {
         $kandidat = auth()->user();
         $kandidat->update([
-            'instruktor_ime' => $request->instruktor_name . ' (ČEKA ODOBRENJE)'
+            'instruktor_ime' => $request->instruktor_name . ' (ČEKA SE ODOBRENJE)'
         ]);
         return redirect()->back()->with('status', 'Zahtev je uspešno poslat!');
     }
