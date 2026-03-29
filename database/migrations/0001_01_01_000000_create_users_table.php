@@ -21,8 +21,8 @@ return new class extends Migration
         $table->string('telefon')->nullable(); 
         $table->boolean('teorija_polozena')->default(0);
         
-        $table->string('kategorija')->nullable(); // Za instruktora (A, B...) i kandidata (šta polaže)
-        $table->boolean('is_approved')->default(1); // Stavili smo 1 da te ne muči sad, ali možeš menjati
+        $table->string('kategorija')->nullable(); 
+        $table->boolean('is_approved')->default(1); 
 
         $table->rememberToken();
         $table->timestamps();

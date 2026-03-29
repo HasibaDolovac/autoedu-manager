@@ -9,7 +9,7 @@
         </span>
     </div>
 
-    {{-- PORUKA AKO NEMA TERMINA --}}
+    {{-- poruka ako nema termina --}}
     <p style="opacity: 0.7; font-size: 0.95em; margin-bottom: 20px;">
         Pregled dostupnih i zakazanih termina za vaš profil u tekućoj nedelji.
     </p>

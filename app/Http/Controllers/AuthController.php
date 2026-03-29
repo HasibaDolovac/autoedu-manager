@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    // Otvara stranicu za registraciju
+    
     public function otvoriRegistraciju() {
         return view('autentifikacija.registracija');
     }
 
-    // Čuva novog korisnika u bazu
+    
     public function sacuvajKorisnika(Request $request) {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -22,7 +22,7 @@ class AuthController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required',
             'telefon' => 'required',
-            // Kategorija nije obavezna za kandidate, pa stavljamo nullable
+            
             'kategorija' => 'nullable|string'
         ]);
 
@@ -33,8 +33,8 @@ class AuthController extends Controller
             'role' => $request->role,
             'telefon' => $request->telefon,
             'kategorija' => $request->kategorija,
-            'odvezeno_casova' => 0, // Početna vrednost
-            'teorija_status' => 'Nije položeno' // Početna vrednost
+            'odvezeno_casova' => 0, 
+            'teorija_status' => 'Nije položeno' 
         ]);
 
         Auth::login($user);
@@ -42,12 +42,12 @@ class AuthController extends Controller
         return redirect()->route('pocetna')->with('status', 'Uspešno ste napravili nalog!');
     }
 
-    // Otvara stranicu za prijavu (Login)
+    
     public function prikaziLogin() {
         return view('autentifikacija.prijava');
     }
 
-    // Logika za logovanje
+    
     public function login(Request $request) {
         $credentials = $request->validate([
             'email' => 'required|email',
@@ -62,7 +62,7 @@ class AuthController extends Controller
         return back()->withErrors(['email' => 'Pogrešni podaci za pristup.']);
     }
 
-    // Logika za odjavu (Logout)
+    
     public function logout(Request $request) {
         Auth::logout();
         $request->session()->invalidate();

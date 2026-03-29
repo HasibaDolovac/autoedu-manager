@@ -15,7 +15,7 @@
             @method('PUT')
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                {{-- registr --}}
+                
                 <div>
                     <div style="margin-bottom: 20px;">
                         <label style="display:block; margin-bottom: 10px; font-weight: 700; color: white;">Uloga korisnika:</label>
@@ -38,7 +38,7 @@
                 
                 <div>
                     <div style="margin-bottom: 20px;">
-                        <label style="display:block; margin-bottom: 10px; font-weight: 700; color: white;">Odvezeno časova:</label>
+                        <label style="display:block; margin-bottom: 10px; font-weight: 700; color: white;">Obavljeno časova:</label>
                         <input type="number" name="odvezeno_casova" value="{{ $korisnik->odvezeno_casova }}" min="0" max="40" style="width: 100%; padding: 12px; background: rgba(255,255,255,0.9); border: none; border-radius: 10px; color: #2c3e50; font-weight: bold;">
                     </div>
 

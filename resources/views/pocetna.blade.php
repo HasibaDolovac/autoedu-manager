@@ -15,7 +15,7 @@
     </div>
 @endif
 
-{{-- ulogovani korisiici --}}
+{{-- ulogovani korisnici --}}
 @auth
     <div class="dashboard-wrapper" style="max-width: 1200px; margin: 0 auto;">
         
@@ -43,7 +43,7 @@
                 @endif
             </div>
 
-            {{-- prikaz najnovijih obavesteja --}}
+            {{-- prikaz novih obavestenja --}}
             <div class="staklena-kartica" style="background: rgba(52, 152, 219, 0.2); padding: 25px; border-radius: 15px; border: 1px solid #3498db; color: white;">
                 <h3> Poslednje obaveštenje</h3>
                 @if($obavestenja->count() > 0)

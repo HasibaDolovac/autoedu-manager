@@ -48,7 +48,7 @@ class GlavniSeeder extends Seeder
     Termin::create([
         'instructor_id' => $ins1->id,
         'candidate_id' => $kan1->id,
-        'start_time' => Carbon::now()->startOfWeek()->addHours(10), // Ponedeljak u 10h
+        'start_time' => Carbon::now()->startOfWeek()->addHours(10), 
         'end_time' => Carbon::now()->startOfWeek()->addHours(11),
         'tip_casa' => 'vožnja',
     ]);
@@ -56,7 +56,7 @@ class GlavniSeeder extends Seeder
     Termin::create([
         'instructor_id' => $ins2->id,
         'candidate_id' => $kan1->id,
-        'start_time' => Carbon::now()->startOfWeek()->addDays(2)->addHours(14), // Sreda u 14h
+        'start_time' => Carbon::now()->startOfWeek()->addDays(2)->addHours(14), 
         'end_time' => Carbon::now()->startOfWeek()->addDays(2)->addHours(15),
         'tip_casa' => 'teorija',
     ]);

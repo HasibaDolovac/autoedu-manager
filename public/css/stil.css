@@ -1,5 +1,5 @@
 :root {
-    /* Moderne boje i gradijenti za dugmiće */
+   
     --primarna-gradijent: linear-gradient(135deg, #4c51bf 0%, #6b46c1 100%);
     --svetla-bela: rgba(255, 255, 255, 0.9);
     --siva-tekst: #d1d5db;
@@ -9,7 +9,7 @@
 body, html {
     margin: 0; padding: 0;
     height: 100%;
-    /* Smanjen osnovni font da sve ostalo (em/rem) padne na svoje mesto */
+    
     font-size: 14px; 
     font-family: 'Segoe UI', Arial, sans-serif;
 }
@@ -20,7 +20,6 @@ body, html {
     background-size: cover;
 }
 
-/* Struktura */
 .glavna-struktura {
     display: flex;
     height: 100vh;
@@ -28,7 +27,7 @@ body, html {
 
 .nav-linkovi a {
     display: block;
-    padding: 8px 12px; /* Smanjen vertikalni padding */
+    padding: 8px 12px; 
     color: var(--siva-tekst);
     text-decoration: none;
     border-radius: 8px;
@@ -42,19 +41,18 @@ body, html {
     box-shadow: 0 4px 15px rgba(107, 70, 193, 0.4);
 }
 
-/* GLAVNI DEO */
+
 .glavni-deo {
     flex: 1;
     overflow-y: auto;
     background: rgba(0, 0, 0, 0.1);
 }
 
-/* GORNJA TRAKA */
 .gornja-traka {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px 25px; /* Smanjen padding trake */
+    padding: 10px 25px; 
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -62,35 +60,35 @@ body, html {
 
 .ime-korisnika { color: white; font-weight: bold; margin-right: 15px; }
 
-/* KARTICE - KLJUČNA IZMENA */
+
 .staklena-kartica {
     background: rgba(0, 0, 0, 0.75); 
     backdrop-filter: blur(15px);
-    border-radius: 12px; /* Malo oštrije ivice za kompaktniji izgled */
-    padding: 20px 25px;  /* Dodatno smanjen padding */
+    border-radius: 12px; 
+    padding: 20px 25px;  
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
-    max-width: 480px;    /* Smanjeno sa 550px na 480px - ovo će je značajno skupiti */
-    margin: 15px auto;   /* Smanjen spoljni razmak */
+    max-width: 480px;    
+    margin: 15px auto;  
 }
 
-/* Tekstovi unutar kartica */
+
 .staklena-kartica h1, .staklena-kartica h2, .staklena-kartica h3, .staklena-kartica p, .staklena-kartica label {
     color: white;
 }
 
-.staklena-kartica h1 { font-size: 1.5rem; margin-bottom: 5px; text-align: center; } /* Smanjen h1 */
-.staklena-kartica p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 15px; text-align: center; } /* Smanjen p */
+.staklena-kartica h1 { font-size: 1.5rem; margin-bottom: 5px; text-align: center; } 
+.staklena-kartica p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 15px; text-align: center; }
 .staklena-kartica label { display:block; margin-bottom: 5px; font-weight: 700; font-size: 0.9em; }
 
-/* INPUT POLJA */
+
 input, select, textarea {
     width: 100%;
-    padding: 8px 10px; /* Kompaktniji inputi */
+    padding: 8px 10px; 
     margin-top: 4px;
     border: none;
-    border-radius: 8px; /* Smanjen radius za manje inpute */
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.9);
     color: var(--tamni-tekst);
     font-size: 0.95em;
@@ -102,20 +100,20 @@ input:focus, select:focus {
     box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.2);
 }
 
-/* MODERNA DUGMAD */
+
 .dugme-primarno, .dugme-registracija-nav {
     background: var(--primarna-gradijent);
     color: white;
     border: none;
-    padding: 10px; /* Smanjen padding dugmeta */
+    padding: 10px; 
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 0.9rem; /* Smanjen font dugmeta */
+    font-size: 0.9rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(76, 81, 191, 0.3);
     width: 100%;
-    margin-top: 15px; /* Smanjen razmak iznad dugmeta */
+    margin-top: 15px; 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -135,9 +133,9 @@ input:focus, select:focus {
     font-size: 0.85em;
 }
 
-/* Centriranje */
+
 .sadržaj-stranice {
-    max-width: 1000px; /* Smanjen max-width celog sadržaja */
+    max-width: 1000px; 
     margin: 0 auto;
     padding: 15px;
 }

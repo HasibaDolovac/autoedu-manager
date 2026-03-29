@@ -9,6 +9,6 @@ class Announcement extends Model
 {
     use HasFactory;
 
-    // Ovo rešava grešku - dozvoljavamo upis naslova i poruke
+ 
     protected $fillable = ['naslov', 'poruka'];
 }

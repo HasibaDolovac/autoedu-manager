@@ -11,7 +11,7 @@
 
         @foreach($mojiKandidati as $kand)
             <div style="background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 20px; overflow: hidden;">
-                {{-- GLAVNI RED KANDIDATA --}}
+                {{-- red kandidata --}}
                 <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02);">
                     <div style="flex: 1;">
                         <div style="font-weight: 600; font-size: 1.2em;">{{ $kand->name }}</div>

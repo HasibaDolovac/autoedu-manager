@@ -37,18 +37,18 @@
             <a href="{{ route('pocetna') }}" class="{{ request()->is('pocetna') ? 'aktivno' : '' }}">Početna</a>
 
             @auth
-                {{-- LINKOVI ZA ADMINA --}}
+                {{-- za admina --}}
                 @if(Auth::user()->role == 'admin')
                     <a href="{{ route('admin.korisnici') }}"> Korisnici</a>
                     <a href="{{ route('admin.obavestenja') }}"> Obaveštenja</a>
                 
-                {{-- LINKOVI ZA INSTRUKTORA --}}
+                {{-- linkovi za instr --}}
                 @elseif(Auth::user()->role == 'instruktor')
                     <a href="{{ route('instruktor.termini') }}"> Termini</a>
                     <a href="{{ route('instruktor.evidencija') }}"> Ocene</a>
                 @endif
 
-                {{-- ZAJEDNIČKO ZA SVE ULOGOVANE (Ime i Logout) --}}
+                {{-- opcija logout --}}
                 <span style="color: #3498db; margin-left: 20px;"> {{ Auth::user()->name }}</span>
                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                     @csrf
@@ -57,7 +57,7 @@
             @endauth
 
             @guest
-                {{-- LINKOVI ZA GOSTE (Neregistrovane) --}}
+                {{-- linkovi za goste --}}
                 <a href="{{ route('login') }}">Prijavi se</a>
                 <a href="{{ route('registracija') }}" style="background: #2ecc71; padding: 8px 15px; border-radius: 5px; color: white;">Napravi nalog</a>
             @endguest

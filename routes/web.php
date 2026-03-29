@@ -7,7 +7,7 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\UserController;
 
 
-// --- 1. JAVNE RUTE (Gosti) ---
+// GOSTI
 Route::get('/', [PocetnaController::class, 'index'])->name('pocetna');
 
 // Registracija
@@ -19,7 +19,7 @@ Route::get('/prijava', [AuthController::class, 'prikaziLogin'])->name('login');
 Route::get('/uloguj-se', [AuthController::class, 'prikaziLogin'])->name('prijava');
 Route::post('/provera-prijave', [AuthController::class, 'login'])->name('provera.prijave');
 
-// --- 2. ZAJEDNIČKE RUTE (Svi ulogovani korisnici) ---
+// ---  RUTE ZA SVE KORISNIKE ---
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [PocetnaController::class, 'index'])->name('dashboard');
@@ -28,7 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/ostavi-recenziju', [UserController::class, 'ostaviRecenziju'])->name('recenzija.store');
 });
 
-// --- 3. ADMIN RUTE ---
+// ---  ADMIN RUTE ---
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/svi-korisnici', [UserController::class, 'sviKorisnici'])->name('admin.korisnici');
     Route::delete('/admin/korisnici/{id}', [UserController::class, 'destroy'])->name('admin.korisnici.destroy');
@@ -41,7 +41,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/recenzija/{id}', [PocetnaController::class, 'obrisiRecenziju'])->name('recenzija.obrisi')->middleware('auth');
 });
 
-// --- 4. INSTRUKTOR RUTE ---
+// ---  INSTRUKTOR RUTE ---
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/moji-termini', [PocetnaController::class, 'mojiTermini'])->name('instruktor.termini');
@@ -57,7 +57,7 @@ Route::middleware(['auth'])->group(function () {
    Route::post('/instruktor/teorija/{id}', [UserController::class, 'potvrdiTeoriju'])->name('instruktor.potvrdi-teoriju');
     });
 
-// --- 5. KANDIDAT RUTE ---
+// ---  KANDIDAT RUTE ---
 Route::middleware(['auth'])->group(function () {
 
     Route::post('/posalji-zahtev', [UserController::class, 'posaljiZahtev'])->name('kandidat.posalji-zahtev');

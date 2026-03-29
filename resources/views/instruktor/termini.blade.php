@@ -63,7 +63,7 @@
         
         <div style="margin-top: 35px; display: flex; justify-content: space-between; align-items: center;">
             <a href="{{ route('dashboard') }}" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 12px; color: white; transition: 0.3s; font-weight: 600; border: 1px solid rgba(255,255,255,0.1);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                <span>←</span> Nazad na Dashboard
+                 Nazad na Dashboard
             </a>
             
             <p style="font-size: 0.85em; opacity: 0.5; margin: 0;">Ukupno termina: <strong>{{ $termini->count() }}</strong></p>

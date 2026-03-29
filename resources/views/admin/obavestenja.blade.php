@@ -7,14 +7,14 @@
         <p style="color: var(--siva-tekst); opacity: 0.8;">Kreirajte i upravljajte informacijama za kandidate i instruktore</p>
     </div>
 
-    {{-- Poruka o uspehu --}}
+  
     @if(session('status'))
         <div class="staklena-kartica" style="background: rgba(72, 187, 120, 0.2); border: 1px solid #48bb78; margin: 0 auto 20px auto; max-width: 800px; text-align: center; padding: 10px;">
             <span style="color: #48bb78; font-weight: bold;">✅ {{ session('status') }}</span>
         </div>
     @endif
 
-    {{-- FORMA ZA DODAVANJE NOVOG OBAVEŠTENJA --}}
+    {{-- dodavvanje novog obavestenja --}}
     <div class="staklena-kartica" style="max-width: 800px; margin: 0 auto 40px auto; padding: 25px;">
         <h3 style="color: #f1c40f; margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
              Nova objava
@@ -36,13 +36,13 @@
 
             <div style="text-align: right;">
                 <button type="submit" class="dugme-primarno" style="width: auto; padding: 10px 30px; background: #2ecc71; text-transform: none;">
-                    Objavi odmah →
+                    Objavi odmah 
                 </button>
             </div>
         </form>
     </div>
 
-    {{-- TABELA SA POSTOJEĆIM OBAVEŠTENJIMA --}}
+    {{-- tabela sa postojecim obavestenjima --}}
     <div class="staklena-kartica" style="max-width: 1000px; margin: 0 auto; overflow: hidden; padding: 0;">
         <div style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
             <h3 style="color: white; margin: 0;">Prethodne objave</h3>

@@ -15,7 +15,7 @@ class Termin extends Model
         return $this->belongsTo(User::class, 'instructor_id');
     }
 
-    //ovi delovi odvajaju kandidate i instr
+    
     public function kandidat() {
         return $this->belongsTo(User::class, 'candidate_id');
     }

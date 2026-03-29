@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
 
-                                {{-- Prikaz komentara --}}
+                                {{-- prikaz komentara --}}
                                 @if($termin->komentar_instruktora)
                                     <div style="margin-top: 12px; padding: 12px; background: rgba(52, 152, 219, 0.1); border-left: 4px solid #3498db; border-radius: 4px; font-style: italic; font-size: 0.95em; color: #ecf0f1;">
                                         <span style="display: block; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; color: #3498db; margin-bottom: 5px; font-style: normal; font-weight: bold;">💡 Savet instruktora:</span>
@@ -103,7 +103,7 @@
                 </div>
             @endif
 
-            {{-- STATUS TEROIJE KOJU MENJA ISNTR I ODREDJENIM SLUCAJEVIMA ADMIN --}}
+            {{-- STATUS TEROIJE KOJU MENJA ISNTR I U ODREDJENIM SLUCAJEVIMA ADMIN --}}
 <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px;">
     <h3 style="color: #f1c40f; margin-bottom: 15px;"> Status teorijskog ispita</h3>
     <table style="width: 100%; border-collapse: collapse; color: white;">
@@ -116,10 +116,10 @@
     </thead>
     <tbody>
     @if(Auth::user()->role == 'instruktor' || Auth::user()->role == 'admin')
-        {{-- I instruktor i admin vide listu svih kandidata --}}
+       
         @php 
-            // Ako je admin, izvlačimo sve kandidate iz baze
-            // Ako je instruktor, izvlačimo samo one koji su njegovi
+           
+            
             $prikazKandidata = (Auth::user()->role == 'admin') 
                 ? \App\Models\User::where('role', 'kandidat')->get() 
                 : \App\Models\User::where('instruktor_ime', Auth::user()->name)->get(); 
@@ -153,7 +153,7 @@
         @endforeach
 
     @elseif(Auth::user()->role == 'kandidat')
-        {{-- kandidat vidi sebe --}}
+       
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
             <td style="padding: 12px;"><strong>{{ Auth::user()->name }}</strong></td>
             <td style="padding: 12px;">
@@ -182,7 +182,7 @@
         @endphp
 
         @forelse($zahtevi as $z)
-            {{-- Kartica kandidata kod instr --}}
+            {{-- kartica kandidata kod instr --}}
             <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);">
                 
                 
@@ -216,13 +216,13 @@
         @endforelse
     </div>
 
-    {{-- FORMA ZA ZAKAZIVANJE --}}
+    {{-- zakazivanje --}}
     <div style="background: rgba(52, 152, 219, 0.1); border: 1px solid #3498db; padding: 25px; border-radius: 15px; margin-bottom: 40px;">
         <h3 style="color: #3498db;"> Zakaži novi termin</h3>
         <form action="{{ route('instruktor.zakazi-cas') }}" method="POST">
             @csrf
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
-                {{-- Izmeni listu kandidata u formi za zakazivanje --}}
+                {{-- birnaje kandidata koji je polozio --}}
                     <select name="user_id" required style="padding: 10px; width: 100%; color: black;">
     <option value="">-- Izaberi kandidata (samo položena teorija) --</option>
     
