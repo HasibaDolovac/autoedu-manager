@@ -20,12 +20,12 @@ class AppServiceProvider extends ServiceProvider
        
         if (!app()->runningInConsole()) {
             View::composer('layouts.okvir', function ($view) {
-                $view->with('svi_instruktori', User::where('role', 'instruktor')->get());
-                $view->with('svi_kandidati', User::where('role', 'kandidat')->get());
+              //  $view->with('svi_instruktori', User::where('role', 'instruktor')->get());
+              //  $view->with('svi_kandidati', User::where('role', 'kandidat')->get());
             });
 
-            View::share('svi_instruktori', User::where('role', 'instruktor')->get());
-            View::share('svi_kandidati', User::where('role', 'kandidat')->get());
+            //View::share('svi_instruktori', User::where('role', 'instruktor')->get());
+          //  View::share('svi_kandidati', User::where('role', 'kandidat')->get());
         }
     }
 }
