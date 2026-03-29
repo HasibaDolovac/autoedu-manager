@@ -15,13 +15,17 @@ class AppServiceProvider extends ServiceProvider
         
     }
 
-    public function boot(): void
+   public function boot(): void
     {
-        View::composer('layouts.okvir', function ($view) {
-        $view->with('svi_instruktori', User::where('role', 'instruktor')->get());
-        $view->with('svi_kandidati', User::where('role', 'kandidat')->get());
-    });
-    View::share('svi_instruktori', User::where('role', 'instruktor')->get());
-    View::share('svi_kandidati', User::where('role', 'kandidat')->get());
+       
+        if (!app()->runningInConsole()) {
+            View::composer('layouts.okvir', function ($view) {
+                $view->with('svi_instruktori', User::where('role', 'instruktor')->get());
+                $view->with('svi_kandidati', User::where('role', 'kandidat')->get());
+            });
+
+            View::share('svi_instruktori', User::where('role', 'instruktor')->get());
+            View::share('svi_kandidati', User::where('role', 'kandidat')->get());
+        }
     }
 }
