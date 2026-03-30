@@ -90,7 +90,7 @@ body, html {
 
 .pozadina-slika {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-             url('/css/photo/heroSlika.png') no-repeat center center fixed;
+             url('photo/heroSlika.png') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -242,11 +242,7 @@ body, html {
     color: white;
 }
 
-.pozadina-slika {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('../photo/autoskola1.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
+
 
 
 .glavna-struktura {
