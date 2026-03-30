@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoEdu - Sistem za upravljanje</title>
-    <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
+   <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
     <style>
        
         .glavna-navigacija {
