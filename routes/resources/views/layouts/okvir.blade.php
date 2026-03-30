@@ -148,6 +148,17 @@ body, html {
     margin: 15px auto;   
 }
 
+.staklena-kartica, 
+.staklena-kartica h1, 
+.staklena-kartica h3, 
+.staklena-kartica p, 
+.staklena-kartica th, 
+.staklena-kartica td,
+.staklena-kartica strong {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
 
 .staklena-kartica h1, .staklena-kartica h2, .staklena-kartica h3, .staklena-kartica p, .staklena-kartica label {
     color: white;
