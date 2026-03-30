@@ -21,11 +21,11 @@
             {{-- biranje instruktora --}}
             @if(Auth::user()->role == 'kandidat' && !Auth::user()->instruktor_ime)
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 1px solid #f1c40f; margin-bottom: 30px;">
-                    <h3 style="color: #f1c40f; margin-bottom: 20px;">🚀 Započni obuku</h3>
+                    <h3 style="color: #f1c40f; margin-bottom: 20px;">Započni obuku</h3>
                     <form action="{{ route('kandidat.posalji-zahtev') }}" method="POST">
                         @csrf
                         <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                            <div style="width: 60px; height: 60px; background: #f1c40f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: black;">🚗</div>
+                            <div style="width: 60px; height: 60px; background: #f1c40f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: black;"></div>
                             <div style="flex: 1; min-width: 250px;">
                                 <label style="display: block; margin-bottom: 8px; opacity: 0.8;">Izaberi svog instruktora:</label>
                                 <select name="instruktor_name" required style="width: 100%; padding: 12px; border-radius: 10px; border: none; background: white; color: black; font-weight: bold;">
